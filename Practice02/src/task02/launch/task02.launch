@@ -5,7 +5,7 @@
     <!-- Define the node to be launched -->
     <node
         pkg="task02"
-        exec="publisher"
+        exec="string_publisher"
         output="screen"
     >
         <!-- Pass the argument value as a parameter -->

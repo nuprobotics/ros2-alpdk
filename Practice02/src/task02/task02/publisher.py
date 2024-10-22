@@ -5,7 +5,7 @@ from rclpy.parameter import Parameter
 
 class Publisher(Node):
     def __init__(self):
-        super().__init__('publisher')
+        super().__init__('string_publisher')
 
         # Load parameters from the config file
         self.declare_parameter('topic_name', '/spgc/receiver')
