@@ -15,4 +15,7 @@
   <export>
     <build_type>ament_python</build_type>
   </export>
+
+  <depend>rclpy</depend>
+  <depend>std_msgs</depend>
 </package>

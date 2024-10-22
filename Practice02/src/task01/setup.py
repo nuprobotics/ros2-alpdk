@@ -21,6 +21,7 @@ setup(
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [
+            'receiver = task01.receiver:main'
         ],
     },
 )
