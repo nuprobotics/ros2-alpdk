@@ -3,7 +3,7 @@ from rclpy.node import Node
 from std_msgs.msg import String
 
 
-class Receiver(Node):
+class ReceiverNode(Node):
     def __init__(self):
         super().__init__('receiver')
         self.subscription = self.create_subscription(
@@ -20,7 +20,7 @@ class Receiver(Node):
 
 def main(args=None):
     rclpy.init(args=args)
-    node = Receiver()
+    node = ReceiverNode()
 
     try:
         rclpy.spin(node)
