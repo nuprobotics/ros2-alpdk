@@ -1,6 +1,6 @@
 <launch>
     <!-- Define the argument with a default value -->
-    <arg name="string" default="Hello, ROS2!" />
+    <arg name="text" default="Hello, ROS2!" />
 
     <!-- Define the node to be launched -->
     <node
@@ -9,7 +9,7 @@
         output="screen"
     >
         <!-- Pass the argument value as a parameter -->
-        <param name="string" value="$(var text)" />
+        <param name="text" value="$(var text)" />
 
         <!-- Load additional parameters from the configuration file -->
         <param from="$(find-pkg-share task02)/config/task02.yaml" />
