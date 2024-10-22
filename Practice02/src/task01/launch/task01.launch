@@ -1,0 +1,12 @@
+<launch>
+    <arg name="string" default="hi" />
+
+    <node
+        pkg="task01"
+        exec="receiver"
+        output="screen"
+    >
+        <param name="string" value="$(var string)" />
+<!--         <param from="$(find-pkg-share example)/config/example.yaml"/> -->
+    </node>
+</launch>
