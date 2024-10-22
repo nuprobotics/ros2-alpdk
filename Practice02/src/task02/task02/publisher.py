@@ -3,9 +3,9 @@ from rclpy.node import Node
 from std_msgs.msg import String
 from rclpy.parameter import Parameter
 
-class StringPublisher(Node):
+class Publisher(Node):
     def __init__(self):
-        super().__init__('string_publisher')
+        super().__init__('publisher')
 
         # Load parameters from the config file
         self.declare_parameter('topic_name', '/spgc/receiver')
@@ -26,7 +26,7 @@ class StringPublisher(Node):
 
 def main(args=None):
     rclpy.init(args=args)
-    node = StringPublisher()
+    node = Publisher()
 
     # Read command line parameter
     if len(args) > 1:
