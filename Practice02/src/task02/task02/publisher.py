@@ -30,7 +30,7 @@ def main(args=None):
     node = Publisher()
 
     # Read command line parameter
-    if args != None and len(args) > 1:
+    if len(args) > 1:
         try:
             # Overriding the default message if provided
             node.text = args[1]
@@ -43,7 +43,4 @@ def main(args=None):
     rclpy.shutdown()
 
 if __name__ == '__main__':
-    if len(sys.argv) > 1:
-        main(sys.argv[1:])
-    else:
-        main()
+    main(sys.argv)
