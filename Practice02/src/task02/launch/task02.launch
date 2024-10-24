@@ -10,8 +10,5 @@
     >
         <!-- Pass the argument value as a parameter -->
         <param name="text" value="$(var text)" />
-
-        <!-- Load additional parameters from the configuration file -->
-        <param from="$(find-pkg-share task02)/config/task02.yaml" />
     </node>
 </launch>
