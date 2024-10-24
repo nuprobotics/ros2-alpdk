@@ -1,15 +1,16 @@
+import sys
 import rclpy
 from rclpy.node import Node
 from std_msgs.msg import String
 from rclpy.parameter import Parameter
 
 class Publisher(Node):
-    def __init__(self, text = 'Hello, ROS2!'):
+    def __init__(self):
         super().__init__('publisher')
 
         # Load parameters from the config file
         self.declare_parameter('topic_name', '/spgc/receiver')
-        self.declare_parameter('text', text)
+        self.declare_parameter('text', 'Hello, ROS2!')
 
         self.topic_name = self.get_parameter('topic_name').get_parameter_value().string_value
         self.text = self.get_parameter('text').get_parameter_value().string_value
@@ -26,16 +27,23 @@ class Publisher(Node):
 
 def main(args=None):
     rclpy.init(args=args)
+    node = Publisher()
 
     # Read command line parameter
-    if len(args) > 1:
-        node = Publisher(args[1])
-    else:
-        node = Publisher()
+    if args != None and len(args) > 1:
+        try:
+            # Overriding the default message if provided
+            node.text = args[1]
+            node.set_parameters([Parameter('text', value=node.text)])
+        except Exception as e:
+            node.get_logger().error(f'Error setting text parameter: {e}')
 
     rclpy.spin(node)
     node.destroy_node()
     rclpy.shutdown()
 
 if __name__ == '__main__':
-    main()
+    if len(sys.argv) > 1:
+        main(sys.argv[1:])
+    else:
+        main()
