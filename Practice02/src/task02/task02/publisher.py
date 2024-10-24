@@ -30,7 +30,7 @@ def main(args=None):
     node = Publisher()
 
     # Read command line parameter
-    if len(args) > 1:
+    if args is not None:
         try:
             # Overriding the default message if provided
             node.text = args[1]
