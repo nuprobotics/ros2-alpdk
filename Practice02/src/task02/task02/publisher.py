@@ -29,14 +29,14 @@ def main(args=None):
     rclpy.init(args=args)
     node = Publisher()
 
-    # Read command line parameter
-    if args is not None:
-        try:
-            # Overriding the default message if provided
-            node.text = args[1]
-            node.set_parameters([Parameter('text', value=node.text)])
-        except Exception as e:
-            node.get_logger().error(f'Error setting text parameter: {e}')
+    # # Read command line parameter
+    # if args is not None:
+    #     try:
+    #         # Overriding the default message if provided
+    #         node.text = args[1]
+    #         node.set_parameters([Parameter('text', value=node.text)])
+    #     except Exception as e:
+    #         node.get_logger().error(f'Error setting text parameter: {e}')
 
     rclpy.spin(node)
     node.destroy_node()
