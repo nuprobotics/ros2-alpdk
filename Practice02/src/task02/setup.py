@@ -10,7 +10,8 @@ setup(
         ('share/ament_index/resource_index/packages',
             ['resource/' + package_name]),
         ('share/' + package_name, ['package.xml']),
-        ('share/task02' + "/launch", ['launch/task02.launch'])
+        ('share/task02' + "/launch", ['launch/task02.launch']),
+        ('share/task02' + "/config", ['config/task02.yaml'])
     ],
     install_requires=['setuptools'],
     zip_safe=True,
