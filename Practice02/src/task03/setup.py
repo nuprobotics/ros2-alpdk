@@ -11,7 +11,7 @@ setup(
             ['resource/' + package_name]),
         ('share/' + package_name, ['package.xml']),
         ('share/task03' + "/launch", ['launch/task03.launch']),
-        ('share/task03' + '/config', ['config/task03.yaml']),
+        ('share/task03' + '/config', ['config/task03.yaml'])
     ],
     install_requires=['setuptools'],
     zip_safe=True,

@@ -1,7 +1,7 @@
 <launch>
     <node
         pkg="task03"
-        exec="trigger_node"
+        exec="task03"
         output="screen"
     >
         <param from="$(find-pkg-share task03)/config/task03.yaml" />
