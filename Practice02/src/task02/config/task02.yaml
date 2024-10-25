@@ -1,4 +1,4 @@
-task02:
+/**:
   ros__parameters:
     topic_name: "/spgc/receiver"
     text: "Hello, ROS2!"
